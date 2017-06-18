@@ -22,6 +22,8 @@ public class Transaction {
 	 private final Locale locale;
 
 	 private final String accountNumber;
+	
+	 private final String externalId;
 
 	 private final String routingCode;
 
@@ -31,12 +33,13 @@ public class Transaction {
 
 	 private final String checkNumber;
 
-	    public Transaction(String transactionAmount, String transactionDate, String paymentTypeId, String accountNumber,
+	    public Transaction(String transactionAmount, String transactionDate, String paymentTypeId, String accountNumber, String externalId,
 	    		String checkNumber, String routingCode, String receiptNumber, String bankNumber, Integer accountId, String transactionType, Integer rowIndex) {
 		    this.transactionAmount = transactionAmount;
 	        this.transactionDate = transactionDate;
 	        this.paymentTypeId = paymentTypeId;
 	        this.accountNumber = accountNumber;
+		this.externalId = externalId;
 	        this.checkNumber = checkNumber;
 	        this.routingCode = routingCode;
 	        this.receiptNumber = receiptNumber;
@@ -74,6 +77,9 @@ public class Transaction {
 
 	    public String getAccountNumber() {
 	    	return this.accountNumber;
+	    }
+	    public String getExternalId() {
+	    	return this.externalId;
 	    }
 
 	    public String getRoutingCode() {
