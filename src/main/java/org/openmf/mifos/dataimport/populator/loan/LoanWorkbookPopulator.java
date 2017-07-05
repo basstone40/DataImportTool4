@@ -77,7 +77,8 @@ public class LoanWorkbookPopulator extends AbstractWorkbookPopulator {
     private static final int LOOKUP_CLIENT_NAME_COL = 42;
     private static final int LOOKUP_ACTIVATION_DATE_COL = 43;
     private static final int GROUP_ID = 41;
-    private static final int LINK_ACCOUNT_ID = 44;
+    private static final int LOOKUP_EXTERNAL_ID_COL = 44;
+    private static final int LINK_ACCOUNT_ID = 45;
     @SuppressWarnings("CPD-END")
 	
 	public LoanWorkbookPopulator(OfficeSheetPopulator officeSheetPopulator, ClientSheetPopulator clientSheetPopulator,
@@ -127,7 +128,7 @@ public class LoanWorkbookPopulator extends AbstractWorkbookPopulator {
 	    	if(result.isSuccess()) 
 	            result = setDefaults(loanSheet);
 	    	setClientAndGroupDateLookupTable(loanSheet, clientSheetPopulator.getClients(), groupSheetPopulator.getGroups(),
-	    			LOOKUP_CLIENT_NAME_COL, LOOKUP_ACTIVATION_DATE_COL);
+	    			LOOKUP_CLIENT_NAME_COL, LOOKUP_EXTERNAL_ID_COL, LOOKUP_ACTIVATION_DATE_COL);
 	        return result;
 	    }
 	    
